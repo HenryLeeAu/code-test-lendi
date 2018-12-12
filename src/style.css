@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color:#383838;
+  font-size: 16px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+img {
+  height: 25px;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.container { 
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Cabin', Arial, Helvetica, sans-serif;
+}
+
+.card {
+  border-radius: 5px;
+  padding: 1.5rem;
+  max-width: 400px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee; 
+}
+
+.card-wrapper {
+  display: flex;
+  padding-top: 1.5rem;
+}
+
+.card-repayment {
+  font-size: 1.5rem;
+  color: #00c0a5;
+}
+
+.card-lender {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
