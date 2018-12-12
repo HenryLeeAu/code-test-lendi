@@ -1,9 +1,11 @@
-import style from './style.css';
-import card from './templates/card.template';
+import style from "./style.css";
 
-const resultContainer = document.getElementById('results');
-
-const lenderList = [
+import { API_URL } from "./constants";
+import filterList from './filterList'
+import sortList from './sortList'
+import mapToDom from './mapToDom'
+const resultContainer = document.getElementById("results");
+/*const tt = [
   {
     bank_name: "ING Direct",
     product_name: "Orange Advantage Combo Fixed - 1 year fixed (P&I)",
@@ -11,7 +13,7 @@ const lenderList = [
     interest_rate: 3.58,
     comparison_rate: 4.62,
     repayments: {
-      monthly: 1859.44
+      monthly: 2015.44
     },
   }, {
     bank_name: "Westpac",
@@ -29,7 +31,7 @@ const lenderList = [
     interest_rate: 3.59,
     comparison_rate: 4.67,
     repayments: {
-      monthly: 1861.74
+      monthly: 2222.74
     }
   }, {
     bank_name: "Bank SA",
@@ -38,7 +40,7 @@ const lenderList = [
     interest_rate: 3.64,
     comparison_rate: 3.65,
     repayments: {
-      monthly: 1873.27
+      monthly: 4444.27
     }
   }, {
     bank_name: "Bank of Melbourne",
@@ -50,15 +52,16 @@ const lenderList = [
       monthly: 1873.27
     }
   }
-];
+];*/
 
-lenderList.map((lender) => {
-  resultContainer.innerHTML = card({
-    lender: lender.bank_name, 
-    product: lender.product_name,
-    interestType: lender.rate_type,
-    interestRate: lender.interest_rate,
-    comparisonRate: lender.comparison_rate,
-    monthlyRepayment: lender.repayments.monthly
+resultContainer.innerHTML='loading result';
+fetch(API_URL)
+  .then(response => {
+    resultContainer.innerHTML='';
+    return response.json()
+  })
+  .then(json => json.data)
+  .then(({ products }) => {
+    mapToDom(resultContainer,sortList(filterList(products)))
+     
   });
-});

@@ -38,3 +38,9 @@ use to fetch real data. Use this API instead of the lenderList defined in src/ap
 
 4) **How would you improve this codebase? Please type out your answer below:**
 
+1. add some space between each card (add margin 1rem)
+2. sort and filter have their own function which allow us easy to run the unit tests.
+3. add loading screen and erase it once the fetch successs.
+4. If user can choose the way they sort or filter by fixed/ non-finxed interest
+these function might need to pass another arguemnet like this
+
