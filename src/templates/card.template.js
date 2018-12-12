@@ -14,10 +14,10 @@ const card = ({
       </div>
     </header>
     <div class="card-wrapper">
-      <div class="card-container">
+      <div class="card-container-left">
         <div class="card-interest-type">${product}</div>
       </div>
-      <div class="card-container">
+      <div class="card-container-right">
         <div class="card-interest-rate">
           ${interestRate}% interest rate
         </div>

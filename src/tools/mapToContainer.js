@@ -1,6 +1,8 @@
-import card from "./templates/card.template";
-const mapToDom= (resultContainer,products) => {
+import card from "../templates/card.template";
+const mapToContainer= (resultContainer,products) => {
   return products.map(lender => {
+    setTimeout(function(){
+    },1000)
     const {
       bank_name,
       product_name,
@@ -9,9 +11,9 @@ const mapToDom= (resultContainer,products) => {
       comparison_rate,
       repayments
     } = lender;
-    const newNode = document.createElement("div");
-    resultContainer.appendChild(newNode);
-    newNode.innerHTML = card({
+    const newChild = document.createElement("li");
+    resultContainer.appendChild(newChild);
+    newChild.innerHTML = card({
       lender: bank_name,
       product: product_name,
       interestType: rate_type,
@@ -21,6 +23,6 @@ const mapToDom= (resultContainer,products) => {
     });
   });
 };
-export default mapToDom;
+export default mapToContainer;
 
 
