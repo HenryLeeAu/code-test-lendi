@@ -33,12 +33,10 @@ Ans:innerHTML will rewrite the whole content in the targeted dom element.
 There are 2 solutions
 1. use appendchild to add new elements into targeted dom element. This is my solution for this project.
 
-2. Use a global variable 'children' outside the products.map, run children+= prodct and innerHTML the variable after the map iterator finished.
+2. Use a variable 'children' outside the products.map in SearchResult function scope, run children+= prodct and innerHTML with the variable 'children' after the iterator finished.
 cons:
 It will erase other elements inside the targeted dom, so use append child is safer.
-if the map has asynchronous behaviours which might cause the result incorrent.
-
-
+if the products.map has asynchronous behaviours inside which might cause the incorrent result.
 
 
 2) **We want to give users the best possible matches**
